@@ -1,0 +1,10 @@
+ErrorDocument 403 http://localhost/dashboard/TacoFinder/403
+ErrorDocument 404 http://localhost/dashboard/TacoFinder/404
+ErrorDocument 500 http://localhost/dashboard/TacoFinder/500
+
+DirectoryIndex home.php
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
