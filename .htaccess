@@ -1,8 +1,8 @@
-ErrorDocument 403 http://localhost/dashboard/TacoFinder/403
-ErrorDocument 404 http://localhost/dashboard/TacoFinder/404
-ErrorDocument 500 http://localhost/dashboard/TacoFinder/500
+ErrorDocument 403 https://tacofinder.netlify.app/error/403
+ErrorDocument 404 https://tacofinder.netlify.app/error/404
+ErrorDocument 500 https://tacofinder.netlify.app/error/500
 
-DirectoryIndex home.php
+DirectoryIndex home.html
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 RewriteEngine On

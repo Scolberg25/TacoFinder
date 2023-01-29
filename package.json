@@ -1,0 +1,22 @@
+{
+  "name": "tacofinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scolberg25/tacofinder.git"
+  },
+  "author": "Sebastian Colberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Scolberg25/tacofinder/issues"
+  },
+  "homepage": "https://github.com/Scolberg25/tacofinder#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
