@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taco Finder</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
-    <script src="random.js"></script>
     <script src="fetch.js" defer></script>
-    <link rel="shortcut icon" href="tab.png" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="tab.png">
+    <script src="random.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="images/tab.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/tab.png">
 </head>
 
-<body onload="populate();">
+<body>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a onclick="">Item 1</a>
@@ -24,33 +24,25 @@
     <header>
         <nav>
             <ul id="hero">
+                <li style="float: left;"><a style="margin: 0;"><img src="images/tab.png" style="height: 30px;" /></a></li>
                 <li style="float: left;"><a>Taco Finder</a></li>
-                <li style="float: right"><a>Find <b>Your</b> Perfect Taco</a></li>
+                <li style="float: right" id="find"><a>Find <b>Your</b> Perfect Taco</a></li>
             </ul>
         </nav>
     </header>
     <div class="selectedItems">
-        <div class="spicy" onclick="spicy()">I'm Feeling Spicy</div>
+        <div class="spicy" onclick="populate();">I'm Feeling Spicy</div>
 
         <!--<div class="enviornment">Quiet</div>
         <div class="locationRadius">3 Miles</div>-->
     </div>
     <div>
-        <div class="">
-            <h1 id="largeTitle">Your Taco:</h1>
-            <p>Tenoch Mexican</p>
-            <img src="https://imgs.search.brave.com/GlymrJvC-0cgqkRRZ0_uX7ikWBE5eg-icfiwwdqDZrQ/rs:fit:1200:800:1/g:ce/aHR0cHM6Ly9jZG4u/dm94LWNkbi5jb20v/dGh1bWJvci9lcE5z/Wl9FcjllRERqTHZH/bkR2MkhuUlhubU09/LzB4MDo5NjB4NjQw/LzEyMDB4ODAwL2Zp/bHRlcnM6Zm9jYWwo/NDA0eDI0NDo1NTZ4/Mzk2KS9jZG4udm94/LWNkbi5jb20vdXBs/b2Fkcy9jaG9ydXNf/aW1hZ2UvaW1hZ2Uv/NjM3ODQyMTQvdmVs/dmV0X3RhY28uMC5q/cGc"
-                alt="image" /><br>
-            <span class="location" style="display: inline;">
-                <a><img src="images/marker.svg" style="width: 4rem;"></a>
-                <p style="display: inline;"> Sommerville</p>
-            </span>
-        </div>
         <div id="noNameFound">
-            <h2> No name found </h2>
+            <h2> No items found </h2>
         </div>
-        <div id="loader">
-            <h4>Loading</h4>
+        <div id="loader" style="width: 100%;">
+            <div id="loadWheel"></div>
+            <h4 style="position: relative; text-align: center;">Select an option</h4>
         </div>
         <div id="allNames">
             

@@ -4,11 +4,11 @@ function setErrorDisplay(loaderElm, allNamesElm, errorMessageElm) {
     errorMessageElm.style.display = "block"
 }
 
-let allNamesElm = document.getElementById("allNames")
-let loaderElm = document.getElementById("loader")
-let errorMessageElm = document.getElementById("errorMessage")
+let allNamesElm = document.getElementById("allNames");
+let loaderElm = document.getElementById("loader");
+let errorMessageElm = document.getElementById("errorMessage");
 
-fetch("https://api.apispreadsheets.com/data/fkB8dNLc0Znfg5FF/").then(res => {
+fetch("https://api.apispreadsheets.com/data/XDGKlVsKwdCerTR0/").then(res => {
     if (res.status === 200) {
         res.json().then(data => {
             const yourData = data["data"]
@@ -40,7 +40,7 @@ fetch("https://api.apispreadsheets.com/data/fkB8dNLc0Znfg5FF/").then(res => {
                 //Location Image (img)
                 let rowImgLoc = document.createElement("img")
                 let rowImgLocNode = document.createTextNode(rowInfo["locationlink"])
-                rowImgLoc.setAttribute('src', '\images\marker.svg');
+                rowImgLoc.setAttribute('src', 'images/marker.svg');
                 rowImgLoc.classList.add("locationlink")
 
                 //Location (p)
@@ -54,7 +54,8 @@ fetch("https://api.apispreadsheets.com/data/fkB8dNLc0Znfg5FF/").then(res => {
                 let rowStarsNode = document.createTextNode(rowInfo["stars"])
                 rowStars.appendChild(rowStarsNode)
                 rowStars.classList.add("stars")
-
+                
+                //Append
                 rowInfoDiv.appendChild(rowId)
 				rowInfoDiv.appendChild(rowName)
                 rowInfoDiv.appendChild(rowLocation)
@@ -62,13 +63,13 @@ fetch("https://api.apispreadsheets.com/data/fkB8dNLc0Znfg5FF/").then(res => {
 
                 allNamesElm.appendChild(rowInfoDiv)
 }
-            loaderElm.style.display = "none"
-            allNamesElm.style.display = "block"
+            //loaderElm.style.display = "none"
+            //allNamesElm.style.display = "block"
             errorMessageElm.style.display = "none"
         }).catch(err => {
-            setErrorDisplay(loaderElm, allNamesElm, errorMessageElm)
+            setErrorDisplay(loaderElm, allNamesElm, errorMessageElm);
 })} else {
-            setErrorDisplay(loaderElm, allNamesElm, errorMessageElm)
+            setErrorDisplay(loaderElm, allNamesElm, errorMessageElm);
 }}).catch(err => {
-            setErrorDisplay(loaderElm, allNamesElm, errorMessageElm)
-})
+            setErrorDisplay(loaderElm, allNamesElm, errorMessageElm);
+});
