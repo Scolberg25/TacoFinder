@@ -7,34 +7,82 @@
     <title>Taco Finder</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="fetch.js" defer></script>
-    <script src="random.js" defer></script>
+    <script src="filter.js" defer></script>
     <script src="script.js" defer></script>
     <link rel="shortcut icon" href="images/tab.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/tab.png">
+
+    <style>
+        @media screen and (max-width: 900px) {
+            .selectedItems {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
-<body>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a onclick="">Item 1</a>
-        <a onclick="">Item 2</a>
-        <a onclick="">Item 3</a>
-        <a onclick="">Item 4</a>
-    </div>
+<body style="overflow: auto;">
     <header>
         <nav>
             <ul id="hero">
                 <li style="float: left;"><a style="margin: 0;"><img src="images/tab.png" style="height: 30px;" /></a></li>
-                <li style="float: left;"><a>Taco Finder</a></li>
-                <li style="float: right" id="find"><a>Find <b>Your</b> Perfect Taco</a></li>
+                <li style="float: left;"><a id="dis"><b>Taco Finder</b></a></li>
+                <li style="float: right"><a href="about" id="dis"><b>Taco-education</b></a></li>
             </ul>
         </nav>
     </header>
-    <div class="selectedItems">
-        <div class="spicy" onclick="populate();">I'm Feeling Spicy</div>
+    <div class="main">
+        <div style="text-align: center;">
+            <h1>Find Your Perfect Taco</h1>
+            <h2>In 3 easy steps:</h2>
+        </div>
+        <div class="selectedItems">
+            <div class="items">
+                <label for="stars-select">Stars:</label>
+                <select name="stars" id="stars-select">
+                    <option value="">Please choose an option</option>
+                    <option value="3">3+ Stars</option>
+                    <option value="3.5">3.5+ Stars</option>
+                    <option value="4">4+ Stars</option>
+                    <option value="4.5">4.5+ Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+            </div>
 
-        <!--<div class="enviornment">Quiet</div>
-        <div class="locationRadius">3 Miles</div>-->
+            <div class="items">
+                <label for="vibe-select">Taco Finder Vibe:</label>
+                <select name="vibe" id="vibe-select">
+                    <option value="">Please choose an option</option>
+                    <option value="mild">Mild</option>
+                    <option value="medium">Medium🌶️</option>
+                    <option value="hot">Hot🌶️🌶️</option>
+                    <option value="xhot">Extra Hot🌶️🌶️🌶️</option>
+                    <option value="burning">🔥Burning🔥</option>
+                </select>
+            </div>
+
+            <div class="items">
+                <label for="location-select">Location:</label>
+                <select name="stars" id="location-select">
+                    <option value="">Please choose an option</option>
+                    <option value="cambridge">Cambridge</option>
+                    <option value="somerville">Somerville</option>
+                    <option value="watertown">Watertown</option>
+                    <option value="allston">Allston</option>
+                    <option value="boston">Boston</option>
+                    <option value="medford">Medford</option>
+                    <option value="waltham">Waltham</option>
+                    <option value="brookline">Brookline</option>
+                </select>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <h2>Not sure?</h2>
+            <h3>Let us pick for you:</h3>
+        </div>
+        <div style="display: flex; flex-direction: row; justify-self: center;">
+            <div class="spicy" onclick="searchFunction();" style="margin: auto;">I'm Feeling Spicy</div>
+        </div>
     </div>
     <div>
         <div id="noNameFound">
@@ -42,14 +90,19 @@
         </div>
         <div id="loader" style="width: 100%;">
             <div id="loadWheel"></div>
-            <h4 style="position: relative; text-align: center;">Select an option</h4>
+            <h4 style="position: relative; text-align: center;">Loading</h4>
         </div>
         <div id="allNames">
             
         </div>
         <div id="errorMessage">
-            <h2> Failed to get data. Please refresh </h2>
+            <h2> Failed to get data - Please refresh </h2>
         </div>
     </div>
+    <footer class="footer">
+        <p>BDS 2023 Capstone Project - Made by Sebastian Colberg</p>
+    </footer>
+
+    <button onclick="clear();" id="clearButton">Clear</button>
 </body>
 </html>

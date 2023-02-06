@@ -7,12 +7,33 @@
 
 /* Device Media Queries */
 @media screen and (max-aspect-ratio: 5/4) and (max-width: 450px) {
-    #find {
-        display: none;
+    #dis {
+        font-size: 16px;
     }
 }
 
 /* Main */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 body {
     background-color: var(--background);
     color: var(--text);
@@ -26,7 +47,7 @@ body.fadein {
     transition: opacity 2s;
 }
 
-a, a:hover, a:visited, a:active {
+a {
     color: inherit;
     text-decoration: none;
 }
@@ -55,11 +76,11 @@ a, a:hover, a:visited, a:active {
     display: none;
 }
 
-/* navbar */
-header {
-    border-bottom: 2px solid var(--border);
+.about {
+    background-color: green;
 }
 
+/* navbar */
 ul {
     list-style-type: none;
     margin: 0;
@@ -76,7 +97,7 @@ li a {
     display: block;
     color: var(--text);
     text-align: center;
-    padding: 10px;
+    padding: 8px;
     text-decoration: none;
     font-size: 20px;
 }
@@ -86,79 +107,112 @@ li a {
     -webkit-transform: rotate(180deg);
 }
 
-/* Selector Screen */
-#mySidenav {
-    width: 100%;
-    position: fixed;
-    top: -50px;
-    background-color: #111;
-    transition: top 0.5s;
-    overflow-y: hidden;
+label {
+    padding-top: 20px;
+    font-size: 1rem;
 }
 
-#mySidenav a {
-    float: left;
-    display: block;
-    color: #818181;
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #CCC;
+    margin: 30px;
+    padding: 8px 40px 8px 8px;
+    font-size: 1rem;
+    border: 1px solid #CCC;
     text-align: center;
-    padding: 15px;
-    text-decoration: none;
 }
 
-#mySidenav a:hover {
-    color: #f1f1f1;
+#stars-select {
+    background: url(https://cdn-icons-png.flaticon.com/512/1828/1828884.png) 96% / 16% no-repeat #EEE;
 }
 
-#mySidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+#vibe-select {
+    background: url(https://cdn-icons-png.flaticon.com/512/2386/2386842.png) 96% / 16% no-repeat #EEE;
 }
 
-#main {
-    transition: margin-top .5s;
-    padding: 20px;
-}
-
-.spicy {
-    background-color: red;
+#location-select {
+    background: url(https://cdn-icons.flaticon.com/svg/3916/3916880.svg?token=exp=1675638867~hmac=137cf7f48f758edf5fbb47b452f349a0) 96% / 16% no-repeat #EEE;
 }
 
 /* Selected Items */
-.selectedItems {
-    display: inline-block;
+.main {
+    background: darkorange;
+    /*background: -webkit-linear-gradient(to right, #F09819, #FF512F);
+    background: linear-gradient(to right, #F09819, #FF512F);*/
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: scroll;
 }
 
-.selectedItems div {
+.selectedItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.spicy {
     display: inline-block;
+    font-weight: bold;
+    margin: 30px;
+    padding: 8px 40px 8px 8px;
+    font-size: 1rem;
+    border: 1px solid #CCC;
+    text-align: center;
+    background: url(https://cdn-icons.flaticon.com/svg/3916/3916880.svg?token=exp=1675638867~hmac=137cf7f48f758edf5fbb47b452f349a0) 96% / 16% no-repeat #EEE;
+    /*
     height: 15px;
-    width: fit-content;
     padding: 18px 20px;
-    margin-top: 15px;
-    margin-right: 0px;
-    margin-bottom: 15px;
-    margin-left: 15px;
+    border: 2px solid black;
+    background-color: red;
+    border-radius: 15px;
+    color: black;
+    font-size: 1rem;
+    margin: 20px;
+    user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    */
+}
+
+#clearButton {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    height: 60px;
+    right: 10px;
+    background: transparent;
+    text-align: center;
+    background-color: transparent;
     border: 2px solid black;
     border-radius: 15px;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-.selectedItems p {
+    padding: 18px 20px;
+    width: fit-content;
     color: black;
-    font-size: 10px;
+    font-size: 18px;
+    user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
 }
 
-.enviornment {
-    background-color: purple;
+.starsButton {
+    background-color: #800080;
 }
 
-.locationRadius {
-    background-color: red;
+.locationButton {
+    background-color: #32936F;
 }
 
 /* Error Pages */
@@ -185,9 +239,18 @@ li a {
     list-style: none;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    text-align: center;
+}
+
 /* Scroll Bar Width */
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
 }
 
 /* Scroll Bar Track */
@@ -208,9 +271,8 @@ li a {
 #hero {
     color: white;
     padding: 35px 0 35px 0;
-    background: #FF512F;
-    background: -webkit-linear-gradient(to right, #F09819, #FF512F);
-    background: linear-gradient(to right, #F09819, #FF512F);
+    background-color: white;
+    border: none;
 }
 
 #hero>h1 {
@@ -235,6 +297,7 @@ li a {
 #errorMessage {
     display: none;
     color: red;
+    text-align: center;
 }
 
 #loadWheel {

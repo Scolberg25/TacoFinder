@@ -8,7 +8,7 @@ let allNamesElm = document.getElementById("allNames");
 let loaderElm = document.getElementById("loader");
 let errorMessageElm = document.getElementById("errorMessage");
 
-fetch("https://api.apispreadsheets.com/data/XDGKlVsKwdCerTR0/").then(res => {
+fetch("https://api.apispreadsheets.com/data/58TlUeIQxfM2mT6W/").then(res => {
     if (res.status === 200) {
         res.json().then(data => {
             const yourData = data["data"]
@@ -32,9 +32,9 @@ fetch("https://api.apispreadsheets.com/data/XDGKlVsKwdCerTR0/").then(res => {
                 rowName.classList.add("name")
 
                 //Image (img)
-                let rowImg = document.createElement("img")
-                let rowImgNode = document.createTextNode(rowInfo["image"])
-                rowImg.setAttribute('src', rowImgNode);
+                var rowImg = new Image();
+                imgSrc = rowInfo["image"]
+                rowImg.src = imgSrc;
                 rowImg.classList.add("image")
 
                 //Location Image (img)
@@ -49,6 +49,12 @@ fetch("https://api.apispreadsheets.com/data/XDGKlVsKwdCerTR0/").then(res => {
                 rowLocation.appendChild(rowLocationNode)
                 rowLocation.classList.add("location")
 
+                //Star Image
+                var starImg = new Image();
+                imgSrc = "images/star.png"
+                starImg.src = imgSrc;
+                starImg.classList.add("image")
+
                 //Stars (p)
 				let rowStars = document.createElement("p")
                 let rowStarsNode = document.createTextNode(rowInfo["stars"])
@@ -58,14 +64,16 @@ fetch("https://api.apispreadsheets.com/data/XDGKlVsKwdCerTR0/").then(res => {
                 //Append
                 rowInfoDiv.appendChild(rowId)
 				rowInfoDiv.appendChild(rowName)
+                rowInfoDiv.appendChild(rowImg)
                 rowInfoDiv.appendChild(rowLocation)
+                //rowInfoDiv.appendChild(starImg)
 				rowInfoDiv.appendChild(rowStars)
 
                 allNamesElm.appendChild(rowInfoDiv)
 }
-            //loaderElm.style.display = "none"
-            //allNamesElm.style.display = "block"
-            errorMessageElm.style.display = "none"
+            loaderElm.style.display = "none"
+			allNamesElm.style.display = "block"
+			errorMessageElm.style.display = "none"
         }).catch(err => {
             setErrorDisplay(loaderElm, allNamesElm, errorMessageElm);
 })} else {
