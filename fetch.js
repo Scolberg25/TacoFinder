@@ -8,7 +8,7 @@ let allNamesElm = document.getElementById("allNames");
 let loaderElm = document.getElementById("loader");
 let errorMessageElm = document.getElementById("errorMessage");
 
-fetch("https://api.apispreadsheets.com/data/58TlUeIQxfM2mT6W/").then(res => {
+fetch("https://api.apispreadsheets.com/data/abREWEy398BKsMep/").then(res => {
     if (res.status === 200) {
         res.json().then(data => {
             const yourData = data["data"]
@@ -72,7 +72,7 @@ fetch("https://api.apispreadsheets.com/data/58TlUeIQxfM2mT6W/").then(res => {
                 allNamesElm.appendChild(rowInfoDiv)
 }
             loaderElm.style.display = "none"
-			allNamesElm.style.display = "block"
+			allNamesElm.style.display = "grid"
 			errorMessageElm.style.display = "none"
         }).catch(err => {
             setErrorDisplay(loaderElm, allNamesElm, errorMessageElm);

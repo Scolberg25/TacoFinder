@@ -55,12 +55,15 @@ a {
 .name-row {
     border: 3px solid black;
     border-radius: 6px;
-    width: fit-content;
+    width: 400px;
     max-width: 60vw;
-    display: block;
-    margin: auto;
+    margin: 10px;
     text-align: center;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .name-row p, h2, img {
@@ -113,27 +116,27 @@ label {
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     border: 1px solid #CCC;
-    margin: 30px;
-    padding: 8px 40px 8px 8px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 15px;
+    padding: 13px 13px 13px 50px;
     font-size: 1rem;
     border: 1px solid #CCC;
     text-align: center;
+    font-weight: bold;
 }
 
 #stars-select {
-    background: url(https://cdn-icons-png.flaticon.com/512/1828/1828884.png) 96% / 16% no-repeat #EEE;
+    background: url(https://cdn-icons-png.flaticon.com/512/1828/1828884.png) 3% / 16% no-repeat #EEE;
 }
 
 #vibe-select {
-    background: url(https://cdn-icons-png.flaticon.com/512/2386/2386842.png) 96% / 16% no-repeat #EEE;
+    background: url(https://cdn-icons-png.flaticon.com/512/2311/2311317.png) 3% / 16% no-repeat #EEE;
 }
 
 #location-select {
-    background: url(https://cdn-icons.flaticon.com/svg/3916/3916880.svg?token=exp=1675638867~hmac=137cf7f48f758edf5fbb47b452f349a0) 96% / 16% no-repeat #EEE;
+    background: url(https://cdn-icons.flaticon.com/svg/3916/3916880.svg?token=exp=1675638867~hmac=137cf7f48f758edf5fbb47b452f349a0) 3% / 16% no-repeat #EEE;
 }
 
 /* Selected Items */
@@ -145,6 +148,7 @@ select {
     padding-top: 20px;
     padding-bottom: 20px;
     overflow: scroll;
+    margin-bottom: 30px;
 }
 
 .selectedItems {
@@ -164,19 +168,17 @@ select {
 .spicy {
     display: inline-block;
     font-weight: bold;
-    margin: 30px;
-    padding: 8px 40px 8px 8px;
+    margin: 15px;
+    padding: 13px 13px 13px 50px;
     font-size: 1rem;
     border: 1px solid #CCC;
     text-align: center;
-    background: url(https://cdn-icons.flaticon.com/svg/3916/3916880.svg?token=exp=1675638867~hmac=137cf7f48f758edf5fbb47b452f349a0) 96% / 16% no-repeat #EEE;
-    /*
-    height: 15px;
-    padding: 18px 20px;
-    border: 2px solid black;
-    background-color: red;
-    border-radius: 15px;
+    background: url(https://cdn-icons-png.flaticon.com/512/2386/2386842.png) 3% / 16% no-repeat #EEE;
+    cursor: pointer;
     color: black;
+    /*
+    border-radius: 15px;
+    
     font-size: 1rem;
     margin: 20px;
     user-select: none;
@@ -291,7 +293,11 @@ select {
 }
 
 #allNames {
-    display: none;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    overflow-y: hidden;
+    justify-items: center;
 }
 
 #errorMessage {
