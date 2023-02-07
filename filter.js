@@ -30,7 +30,7 @@ function searchItem(filterByClass, filter) {
             row.style.display = "none"
     }
     loaderElm.style.display = "none"
-    allNamesElm.style.display = "block"
+    allNamesElm.style.display = "grid"
     errorMessageElm.style.display = "none"
 }
     console.log(filter)
@@ -60,7 +60,7 @@ function searchFunction() {
             row.style.display = "none"
     }
     loaderElm.style.display = "none"
-    allNamesElm.style.display = "block"
+    allNamesElm.style.display = "grid"
     errorMessageElm.style.display = "none"
 }
     console.log(filter)
