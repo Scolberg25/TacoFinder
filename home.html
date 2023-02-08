@@ -8,7 +8,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="fetch.js" defer></script>
     <script src="filter.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
     <link rel="shortcut icon" href="images/tab.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/tab.png">
 
@@ -27,7 +27,7 @@
             <ul id="hero">
                 <li style="float: left;"><a style="margin: 0;"><img src="images/tab.png" style="height: 30px;" /></a></li>
                 <li style="float: left;"><a id="dis"><b>Taco Finder</b></a></li>
-                <li style="float: right"><a href="about" id="dis"><b>Taco-education</b></a></li>
+                <li style="float: right"><a href="info" id="dis"><b>Taco-education</b></a></li>
             </ul>
         </nav>
     </header>
@@ -54,10 +54,10 @@
                 <select name="vibe" id="vibe-select">
                     <option value="">Please choose an option</option>
                     <option value="mild">Mild</option>
-                    <option value="medium">Medium🌶️</option>
+                    <option value="med">Medium🌶️</option>
                     <option value="hot">Hot🌶️🌶️</option>
                     <option value="xhot">Extra Hot🌶️🌶️🌶️</option>
-                    <option value="burning">🔥Burning🔥</option>
+                    <option value="burn">🔥Burning🔥</option>
                 </select>
             </div>
 
@@ -75,6 +75,10 @@
                     <option value="brookline">Brookline</option>
                 </select>
             </div>
+        </div>
+        <div class="popup" onclick="popup()" style="display: flex; justify-content: center; margin: 10px;">ⓘ Taco Finder Vibe
+            <span class="popuptext" id="myPopup">Taco Finder Vibe is a rating given by me. It indicates how I feel about the
+                restaurant in general and it rated in hotness level (Not actual spice).</span>
         </div>
         <div style="text-align: center;">
             <h2>Not sure?</h2>

@@ -14,6 +14,22 @@ document.querySelector('#stars-select').addEventListener("change", function() {
     }
 });
 
+document.querySelector('#vibe-select').addEventListener("change", function() {
+    if (this.value == "mild") {
+        searchItem('vibe', "Mild");
+    } else if (this.value == "med") {
+        searchItem('vibe', "Medium");
+    } else if (this.value == "hot") {
+        searchItem('vibe', "Hot");
+    } else if (this.value == "xhot") {
+        searchItem('vibe', "Extra Hot");
+    } else if (this.value == "burn") {
+        searchItem('vibe', "Burning");
+    } else {
+        console.log('No selected');
+    }
+});
+
 function searchItem(filterByClass, filter) {
     let matchCount = 0;
     let allNameRows = document.getElementsByClassName("name-row")

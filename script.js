@@ -5,10 +5,14 @@ function prevPage() {
 
 //Functional
 function clear() {
-    loaderElm.style.display = "none"
-    allNamesElm.style.display = "block"
-    errorMessageElm.style.display = "none"
+    window.location.reload();
 }
+
+function popup() {
+    let popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+
 
 //Img
 function rotateImg() {
