@@ -4,10 +4,6 @@ function prevPage() {
 }
 
 //Functional
-function clear() {
-    window.location.reload();
-}
-
 function popup() {
     let popup = document.getElementById("myPopup");
     popup.classList.toggle("show");

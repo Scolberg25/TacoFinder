@@ -18,6 +18,7 @@ fetch("https://api.apispreadsheets.com/data/abREWEy398BKsMep/").then(res => {
                 //Creating Div
                 let rowInfoDiv = document.createElement("div")
                 rowInfoDiv.classList.add("name-row")
+                rowInfoDiv.classList.add("showing")
 
                 //ID (h4)
 				let rowId = document.createElement("h4")

@@ -30,9 +30,31 @@ document.querySelector('#vibe-select').addEventListener("change", function() {
     }
 });
 
+document.querySelector('#location-select').addEventListener("change", function() {
+    if (this.value == "cambridge") {
+        searchItem('location', "Cambridge");
+    } else if (this.value == "somerville") {
+        searchItem('location', "Somerville");
+    } else if (this.value == "watertown") {
+        searchItem('location', "Watertown");
+    } else if (this.value == "allston") {
+        searchItem('location', "Allston");
+    } else if (this.value == "boston") {
+        searchItem('location', "Boston");
+    } else if (this.value == "medford") {
+        searchItem('location', "Medford");
+    } else if (this.value == "waltham") {
+        searchItem('location', "Waltham");
+    } else if (this.value == "brookline") {
+        searchItem('location', "Brookline");
+    } else {
+        console.log('No selected');
+    }
+});
+
 function searchItem(filterByClass, filter) {
     let matchCount = 0;
-    let allNameRows = document.getElementsByClassName("name-row")
+    let allNameRows = document.querySelectorAll(".name-row.showing")
 
     for (let i = 0; i < allNameRows.length; i++) {
         let row = allNameRows[i]
@@ -44,6 +66,7 @@ function searchItem(filterByClass, filter) {
             matchCount += 1
         } else {
             row.style.display = "none"
+            row.classList.remove("showing")
     }
     loaderElm.style.display = "none"
     allNamesElm.style.display = "grid"

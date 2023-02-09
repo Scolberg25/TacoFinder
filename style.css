@@ -57,6 +57,7 @@ a {
     border: 3px solid black;
     border-radius: 6px;
     width: 400px;
+    max-height: 400px;
     max-width: 60vw;
     margin: 10px;
     text-align: center;
@@ -73,7 +74,7 @@ a {
 }
 
 .name-row img {
-    max-width: 40%;
+    max-height: 35%;
 }
 
 .name-row h4 {
@@ -82,10 +83,6 @@ a {
 
 .about {
     background-color: green;
-}
-
-#rotate180 {
-    transform: translate(180deg);
 }
 
 /* navbar */
@@ -152,7 +149,7 @@ select {
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
-    overflow: scroll;
+    overflow: hidden;
     margin-bottom: 30px;
 }
 
@@ -207,6 +204,7 @@ select {
     width: fit-content;
     color: black;
     font-size: 18px;
+    cursor: pointer;
     user-select: none;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -246,27 +244,26 @@ select {
 }
 
 .footer {
-    position: fixed;
     bottom: 0;
-    width: 100%;
-    height: 50px;
     background: transparent;
     text-align: center;
 }
 
-/* Scroll Bar Width */
-::-webkit-scrollbar {
-    width: 10px;
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
 }
 
-/* Scroll Bar Track */
-::-webkit-scrollbar-track {
-    background: transparent;
+body::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
 }
 
-/* Scroll Bar Handle */
-::-webkit-scrollbar-thumb {
-    background: black;
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #F98125;
 }
 
 /* Import */
@@ -276,7 +273,7 @@ select {
 
 #hero {
     color: white;
-    padding: 35px 0 35px 0;
+    padding: 15px 0 15px 0;
     background-color: white;
     border: none;
 }
