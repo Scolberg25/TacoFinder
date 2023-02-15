@@ -1,3 +1,4 @@
+//Event listeners for dropdown menus
 document.querySelector('#stars-select').addEventListener("change", function() {
     if (this.value == "3") {
         searchItem('stars', 3);
@@ -52,6 +53,7 @@ document.querySelector('#location-select').addEventListener("change", function()
     }
 });
 
+//Main filter function
 function searchItem(filterByClass, filter) {
     let matchCount = 0;
     let allNameRows = document.querySelectorAll(".name-row.showing")
@@ -82,6 +84,7 @@ function searchItem(filterByClass, filter) {
     }
 }
 
+//I'm feeling spicy (random)
 function searchFunction() {
     let filter = Math.floor(Math.random() * 28);
     let matchCount = 0;

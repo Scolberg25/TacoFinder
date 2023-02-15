@@ -1,3 +1,4 @@
+//Error management
 function setErrorDisplay(loaderElm, allNamesElm, errorMessageElm) {
     loaderElm.style.display = "none"
     allNamesElm.style.display = "none"
@@ -8,6 +9,7 @@ let allNamesElm = document.getElementById("allNames");
 let loaderElm = document.getElementById("loader");
 let errorMessageElm = document.getElementById("errorMessage");
 
+//Fetch API from API Spreadsheets
 fetch("https://api.apispreadsheets.com/data/abREWEy398BKsMep/").then(res => {
     if (res.status === 200) {
         res.json().then(data => {
