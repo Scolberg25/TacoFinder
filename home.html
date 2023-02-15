@@ -33,14 +33,12 @@
     </header>
     <div class="main">
         <div style="text-align: center;">
-            <h1>Find Your Perfect Taco</h1>
-            <h2>In 3 easy steps:</h2>
+            <h2>Find Your Perfect Taco In 3 Easy Steps</h2>
         </div>
         <div class="selectedItems">
             <div class="items">
-                <label for="location-select">Location:</label>
-                <select name="stars" id="location-select">
-                    <option value="">Please choose an option</option>
+                <select name="location" id="location-select">
+                    <option value="">Please choose an location</option>
                     <option value="cambridge">Cambridge</option>
                     <option value="somerville">Somerville</option>
                     <option value="watertown">Watertown</option>
@@ -53,9 +51,8 @@
             </div>
 
             <div class="items">
-                <label for="vibe-select">Taco Finder Vibe:</label>
                 <select name="vibe" id="vibe-select">
-                    <option value="">Please choose an option</option>
+                    <option value="">Please choose a vibe</option>
                     <option value="mild">Mild</option>
                     <option value="med">Medium🌶️</option>
                     <option value="hot">Hot🌶️🌶️</option>
@@ -65,9 +62,8 @@
             </div>
 
             <div class="items">
-                <label for="stars-select">Stars:</label>
                 <select name="stars" id="stars-select">
-                    <option value="">Please choose an option</option>
+                    <option value="">Please choose a rating</option>
                     <option value="3">3+ Stars</option>
                     <option value="3.5">3.5+ Stars</option>
                     <option value="4">4+ Stars</option>
@@ -79,10 +75,10 @@
         </div>
         <div class="popup" onclick="popup()" style="display: flex; justify-content: center; margin: 10px;">ⓘ Taco Finder Vibe
             <span class="popuptext" id="myPopup">Taco Finder Vibe is a rating given by me. It indicates how I feel about the
-                restaurant in general and it rated in hotness level (Not actual spice).</span>
+                restaurant in general and it is rated in hotness level (Not actual spice).</span>
         </div>
         <div style="text-align: center;">
-            <h2>Not sure?</h2>
+            <h2>Not sure? Let me pick for you</h2>
         </div>
         <div style="display: flex; flex-direction: row; justify-self: center;">
             <div class="spicy" onclick="searchFunction();" style="margin: auto;">I'm Feeling Spicy</div>

@@ -9,26 +9,58 @@
     <script src="script.js"></script>
     <link rel="shortcut icon" href="images/tab.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/tab.png">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>
-<body style="overflow: auto;">
+<body style="overflow: auto; text-align: center;">
     <header>
         <nav>
             <ul id="hero">
                 <li style="float: left;"><a style="margin: 0;"><img src="images/tab.png" style="height: 30px;" /></a>
                 </li>
                 <li style="float: left;"><a id="dis"><b>Taco Finder</b></a></li>
-                <li style="float: right"><a href="home" id="dis"><b><span>➜</span>Back to Taco Finder</b></a></li>
+                <li style="float: right"><a href="home" id="dis"><b>Back to Taco Finder➜</b></a></li>
             </ul>
         </nav>
     </header>
-    <div>
+    <div class="main2">
+        <div class="box1" style="width: 100%; padding: 0; margin: 0;">
+            <div class="carousel" data-flickity='{ "imagesLoaded": true, "wrapAround": true, "autoPlay": 2000, "pauseAutoPlayOnHover": false, "percentPosition": false, "pageDots": false, "prevNextButtons": false }'> <!--"draggable": false-->
+                <div><img src="images/1.jpg" /></div>
+                <div><img src="images/2.jpg" /></div>
+                <div><img src="images/3.jpg" /></div>
+                <div><img src="images/4.jpg" /></div>
+                <div><img src="imagesc\outatsea.jpg" /></div>
+            </div>
+            <!--TODO: Overlay main title over carousel-->
+            <h1 id="largeTitle">My Search for the perfect taco</h1>
+        </div>
+        <div>
+            <h1 style="text-align: center;">Heres some things I learned during my journey:</h1>
+
+            <div>
+                <h1>During my Capstone Journey, I had to wear a lot of different hats</h1>
+                <ul id="hats">
+                    <li>Researcher</li>
+                    <li>Writer</li>
+                    <li>Editor</li>
+                    <li>Photographer</li>
+                    <li>Programmer</li>
+                    <li>Food critic</li>
+                    <li>Interviewer</li>
+                    <li>Presenter</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h1>I guess you are wondering what my perfect taco is after all this searching</h1>
+            <h2>I was surprised that it wasn't even a taco… it is a torta</h2>
+        </div>
 
     </div>
     <footer class="footer">
         <p>BDS 2023 Capstone Project - Made by Sebastian Colberg</p>
     </footer>
-
-    <button onclick="clear();" id="clearButton">Clear</button>
 </body>
 
 </html>

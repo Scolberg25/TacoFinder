@@ -85,8 +85,12 @@ a {
     background-color: green;
 }
 
+.main div h1, .main div h1 {
+    padding: 0;
+}
+
 /* navbar */
-ul {
+#hero {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -94,11 +98,11 @@ ul {
     background-color: var(--navBarColor);
 }
 
-li {
+#hero li {
     float: left;
 }
 
-li a {
+#hero li a {
     display: block;
     color: var(--text);
     text-align: center;
@@ -125,20 +129,19 @@ select {
     padding: 13px 13px 13px 50px;
     font-size: 1rem;
     border: 1px solid #CCC;
-    text-align: center;
     font-weight: bold;
 }
 
 #stars-select {
-    background: url(https://cdn-icons-png.flaticon.com/512/1828/1828884.png) 3% / 16% no-repeat #EEE;
+    background: url(https://cdn-icons-png.flaticon.com/512/1828/1828884.png) 3% / 12% no-repeat #EEE;
 }
 
 #vibe-select {
-    background: url(https://cdn-icons-png.flaticon.com/512/2311/2311317.png) 3% / 16% no-repeat #EEE;
+    background: url(https://cdn-icons-png.flaticon.com/512/2311/2311317.png) 3% / 12% no-repeat #EEE;
 }
 
 #location-select {
-    background: url(https://cdn-icons.flaticon.com/svg/3916/3916880.svg?token=exp=1675638867~hmac=137cf7f48f758edf5fbb47b452f349a0) 3% / 16% no-repeat #EEE;
+    background: url(https://cdn-icons.flaticon.com/svg/3916/3916880.svg?token=exp=1675638867~hmac=137cf7f48f758edf5fbb47b452f349a0) 3% / 12% no-repeat #EEE;
 }
 
 /* Selected Items */
@@ -226,7 +229,7 @@ select {
 
 /* Text Styling */
 #largeTitle {
-    font-size: 50px;
+    font-size: clamp(30px, 2.5rem, 50px);
     text-align: center;
     margin-left: 75px;
     margin-right: 75px;
@@ -250,8 +253,6 @@ select {
 }
 
 body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
     background-color: #F5F5F5;
 }
 
@@ -261,8 +262,6 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: #F98125;
 }
 
@@ -413,4 +412,51 @@ body::-webkit-scrollbar-thumb {
     to {
         opacity: 1;
     }
+}
+
+/* Carousel */
+* {
+    box-sizing: border-box;
+}
+
+.carousel {
+    position: relative;
+    user-select: none;
+    width: 100%;
+}
+
+.carousel div {
+    position: relative;
+    text-align: center;
+    user-select: none;
+}
+
+.carousel div>a {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: white;
+    user-select: none;
+}
+
+.carousel img {
+    display: block;
+    height: 200px;
+    user-select: none;
+}
+
+@media screen and (min-width: 768px) {
+    .carousel img {
+        height: 400px;
+    }
+}
+
+/* Info */
+#hats {
+    list-style-type: square;
+    text-align: left;
+    margin-left: 45%;
+    font-size: 20px;
 }
