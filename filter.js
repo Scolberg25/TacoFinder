@@ -62,8 +62,10 @@ function searchStars(filterByClass, filter) {
         let row = allNameRows[i]
         let name = row.getElementsByClassName(filterByClass)[0]
         let value = name.innerHTML
+        console.log(value.substring(0, filter.length))
+        console.log(filter)
 
-        if (filter >= parseFloat(value.substring(0, filter.length))) {
+        if (filter >= value.substring(0, filter.length)) {
             row.style.display = "block"
             matchCount += 1
         } else {
@@ -74,7 +76,6 @@ function searchStars(filterByClass, filter) {
     allNamesElm.style.display = "grid"
     errorMessageElm.style.display = "none"
 }
-    console.log(value.substring(0, filter.length))
     let noNameFoundElm = document.getElementById("noNameFound");
 
     if (matchCount === 0) {
