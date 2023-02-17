@@ -61,7 +61,7 @@ function searchStars(filterByClass, filter) {
     for (let i = 0; i < allNameRows.length; i++) {
         let row = allNameRows[i]
         let name = row.getElementsByClassName(filterByClass)[0]
-        let value = name.innerHTML
+        let value = parseFloat(name.innerHTML)
 
         if (filter >= value.substring(0, filter.length)) {
             row.style.display = "block"
@@ -83,7 +83,6 @@ function searchStars(filterByClass, filter) {
         noNameFoundElm.style.display = "none"
     }
 }
-
 
 //Main filter function
 function searchItem(filterByClass, filter) {
