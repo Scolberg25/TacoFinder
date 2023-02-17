@@ -1,15 +1,15 @@
 //Event listeners for dropdown menus
 document.querySelector('#stars-select').addEventListener("change", function() {
     if (this.value == "3") {
-        searchItem('stars', 3);
+        searchStars('stars', 3);
     } else if (this.value == "3.5") {
-        searchItem('stars', 3.5);
+        searchStars('stars', 3.5);
     } else if (this.value == "4") {
-        searchItem('stars', 4);
+        searchStars('stars', 4);
     } else if (this.value == "4.5") {
-        searchItem('stars', 4.5);
+        searchStars('stars', 4.5);
     } else if (this.value == "5") {
-        searchItem('stars', 5);
+        searchStars('stars', 5);
     } else {
         console.log('No selected');
     }
