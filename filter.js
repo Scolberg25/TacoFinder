@@ -53,6 +53,38 @@ document.querySelector('#location-select').addEventListener("change", function()
     }
 });
 
+//Stars Function
+function searchStars(filterByClass, filter) {
+    let matchCount = 0;
+    let allNameRows = document.querySelectorAll(".name-row.showing")
+
+    for (let i = 0; i < allNameRows.length; i++) {
+        let row = allNameRows[i]
+        let name = row.getElementsByClassName(filterByClass)[0]
+        let value = name.innerHTML
+
+        if (filter >= value.substring(0, filter.length)) {
+            row.style.display = "block"
+            matchCount += 1
+        } else {
+            row.style.display = "none"
+            row.classList.remove("showing")
+    }
+    loaderElm.style.display = "none"
+    allNamesElm.style.display = "grid"
+    errorMessageElm.style.display = "none"
+}
+    console.log(filter)
+    let noNameFoundElm = document.getElementById("noNameFound");
+
+    if (matchCount === 0) {
+        noNameFoundElm.style.display = "block"
+    } else {
+        noNameFoundElm.style.display = "none"
+    }
+}
+
+
 //Main filter function
 function searchItem(filterByClass, filter) {
     let matchCount = 0;
