@@ -74,7 +74,7 @@ function searchStars(filterByClass, filter) {
     allNamesElm.style.display = "grid"
     errorMessageElm.style.display = "none"
 }
-    console.log(filter)
+    console.log(value.substring(0, filter.length))
     let noNameFoundElm = document.getElementById("noNameFound");
 
     if (matchCount === 0) {
