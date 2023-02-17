@@ -65,7 +65,7 @@ function searchStars(filterByClass, filter) {
         console.log(parseFloat(value.substring(0, filter.length)))
         console.log(filter)
         try {
-            if (filter >= parseFloat(value.substring(0, filter.length))) {
+            if (filter <= parseFloat(value.substring(0, filter.length))) {
                 console.log(true)
             } else {
                 console.log(false)
