@@ -62,7 +62,7 @@ function searchStars(filterByClass, filter) {
         let row = allNameRows[i]
         let name = row.getElementsByClassName(filterByClass)[0]
         let value = name.innerHTML
-        console.log(value.substring(0, filter.length))
+        console.log(parseFloat(value.substring(0, filter.length)))
         console.log(filter)
 
         if (filter >= value.substring(0, filter.length)) {
