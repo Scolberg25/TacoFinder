@@ -64,6 +64,15 @@ function searchStars(filterByClass, filter) {
         let value = name.innerHTML
         console.log(parseFloat(value.substring(0, filter.length)))
         console.log(filter)
+        try {
+            if (filter >= parseFloat(value.substring(0, filter.length))) {
+                console.log(true)
+            } else {
+                console.log(false)
+            }
+        } catch {
+            console.log("error")
+        }
 
         if (filter >= parseFloat(value.substring(0, filter.length))) {
             row.style.display = "block"
