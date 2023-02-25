@@ -130,7 +130,7 @@ function searchFunction() {
         let value = name.innerHTML
 
         if (filter == value.substring(0, filter.length)) {
-            //row.style.display = "flex"
+            row.style.display = "flex"
             matchCount += 1
         } else {
             row.style.display = "none"
