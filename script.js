@@ -17,10 +17,6 @@ function overlayOff() {
     document.getElementById("overlay").style.display = "none";
 }
 
-function clear() {
-    document.getElementsByClassName("name-row").classList.add("showing");
-}
-
 //Img
 function rotateImg() {
     let img = document.getElementById("downArrow");

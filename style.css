@@ -149,7 +149,7 @@ select {
 }
 
 #location-select {
-    background: url(images/marker.svg) 3% / 12% no-repeat #EEE;
+    background: url(images/marker.png) 3% / 12% no-repeat #EEE;
 }
 
 /* Selected Items */
