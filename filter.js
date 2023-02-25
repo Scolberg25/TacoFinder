@@ -68,7 +68,7 @@ function searchStars(filterByClass, filter) {
         const dataParsed = dataParse[1];
 
         if (filter <= parseFloat(dataParsed)) {
-            row.style.display = "block"
+            //row.style.display = "flex"
             matchCount += 1
         } else {
             row.style.display = "none"
@@ -98,7 +98,7 @@ function searchItem(filterByClass, filter) {
         let value = name.innerHTML
 
         if (filter == value.substring(0, filter.length)) {
-            row.style.display = "block"
+            //row.style.display = "flex"
             matchCount += 1
         } else {
             row.style.display = "none"
@@ -130,7 +130,7 @@ function searchFunction() {
         let value = name.innerHTML
 
         if (filter == value.substring(0, filter.length)) {
-            row.style.display = "block"
+            //row.style.display = "flex"
             matchCount += 1
         } else {
             row.style.display = "none"

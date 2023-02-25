@@ -18,7 +18,7 @@ function overlayOff() {
 }
 
 function clear() {
-    document.getElementsByClassName("name-row").classList.add("showing")
+    document.getElementsByClassName("name-row").classList.add("showing");
 }
 
 //Img
