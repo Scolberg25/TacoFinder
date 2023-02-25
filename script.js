@@ -5,10 +5,21 @@ function prevPage() {
 
 //Functional
 function popup() {
-    let popup = document.getElementById("myPopup");
+    let popup = document.getElementById("popupbox");
     popup.classList.toggle("show");
 }
 
+function overlayOn() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function overlayOff() {
+    document.getElementById("overlay").style.display = "none";
+}
+
+function clear() {
+    document.getElementsByClassName("name-row").classList.add("showing")
+}
 
 //Img
 function rotateImg() {

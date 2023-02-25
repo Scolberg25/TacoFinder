@@ -17,15 +17,15 @@ document.querySelector('#stars-select').addEventListener("change", function() {
 
 document.querySelector('#vibe-select').addEventListener("change", function() {
     if (this.value == "mild") {
-        searchItem('vibe', "Mild");
+        searchItem('vibe', "🔥 Mild");
     } else if (this.value == "med") {
-        searchItem('vibe', "Medium");
+        searchItem('vibe', "🔥 Medium");
     } else if (this.value == "hot") {
-        searchItem('vibe', "Hot");
+        searchItem('vibe', "🔥 Hot");
     } else if (this.value == "xhot") {
-        searchItem('vibe', "Extra Hot");
+        searchItem('vibe', "🔥 Extra Hot");
     } else if (this.value == "burn") {
-        searchItem('vibe', "Burning");
+        searchItem('vibe', "🔥 Burning");
     } else {
         console.log('No selected');
     }
@@ -33,21 +33,21 @@ document.querySelector('#vibe-select').addEventListener("change", function() {
 
 document.querySelector('#location-select').addEventListener("change", function() {
     if (this.value == "cambridge") {
-        searchItem('location', "Cambridge");
+        searchItem('location', "🚲 Cambridge");
     } else if (this.value == "somerville") {
-        searchItem('location', "Somerville");
+        searchItem('location', "🚲 Somerville");
     } else if (this.value == "watertown") {
-        searchItem('location', "Watertown");
+        searchItem('location', "🚲 Watertown");
     } else if (this.value == "allston") {
-        searchItem('location', "Allston");
+        searchItem('location', "🚲 Allston");
     } else if (this.value == "boston") {
-        searchItem('location', "Boston");
+        searchItem('location', "🚲 Boston");
     } else if (this.value == "medford") {
-        searchItem('location', "Medford");
+        searchItem('location', "🚲 Medford");
     } else if (this.value == "waltham") {
-        searchItem('location', "Waltham");
+        searchItem('location', "🚲 Waltham");
     } else if (this.value == "brookline") {
-        searchItem('location', "Brookline");
+        searchItem('location', "🚲 Brookline");
     } else {
         console.log('No selected');
     }
@@ -62,19 +62,12 @@ function searchStars(filterByClass, filter) {
         let row = allNameRows[i]
         let name = row.getElementsByClassName(filterByClass)[0]
         let value = name.innerHTML
-        console.log(parseFloat(value.substring(0, filter.length)))
-        console.log(filter)
-        try {
-            if (filter <= parseFloat(value.substring(0, filter.length))) {
-                console.log(true)
-            } else {
-                console.log(false)
-            }
-        } catch {
-            console.log("error")
-        }
 
-        if (filter <= parseFloat(value.substring(0, filter.length))) {
+        let data = value.substring(0, filter.length);
+        const dataParse = data.split(" ");
+        const dataParsed = dataParse[1];
+
+        if (filter <= parseFloat(dataParsed)) {
             row.style.display = "block"
             matchCount += 1
         } else {

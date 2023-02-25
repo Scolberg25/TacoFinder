@@ -21,7 +21,17 @@
     </style>
 </head>
 
-<body style="overflow: auto;">
+<body style="overflow-x: hidden; overflow-y: scroll;" onload="overlayOn()">
+    <div id="overlay" onclick="overlayOff()">
+        <div id="overlayText">
+            <h1 id="overlayTitle">Welcome to Taco Finder</h1>
+            <h3 id="overlayTextMain">Find your perfect taco by using filters</h3>
+            <div id="overlayTextUnderDiv">
+                <p id="overlayTextUnder">Click anywhere to dismiss</p>
+            </div>
+        </div>
+    </div>
+
     <header>
         <nav>
             <ul id="hero">
@@ -50,6 +60,7 @@
                 </select>
             </div>
 
+            <!--TODO: Implement vibe-->
             <div class="items">
                 <select name="vibe" id="vibe-select">
                     <option value="">Please choose a vibe</option>
@@ -74,7 +85,7 @@
 
         </div>
         <div class="popup" onclick="popup()" style="display: flex; justify-content: center; margin: 10px;">ⓘ Taco Finder Vibe
-            <span class="popuptext" id="myPopup">Taco Finder Vibe is a rating given by me. It indicates how I feel about the
+            <span class="popuptext" id="popupbox">Taco Finder Vibe is a rating given by me. It indicates how I feel about the
                 restaurant in general and it is rated in hotness level (Not actual spice).</span>
         </div>
         <div style="text-align: center;">
@@ -103,6 +114,6 @@
         <p>BDS 2023 Capstone Project - Made by Sebastian Colberg</p>
     </footer>
 
-    <button onclick="location.reload();" id="clearButton">Clear</button>
+    <button onclick="clear()" id="clearButton">Clear</button>
 </body>
 </html>

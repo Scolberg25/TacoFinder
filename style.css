@@ -56,25 +56,33 @@ a {
 .name-row {
     border: 3px solid black;
     border-radius: 6px;
-    width: 400px;
+    width: 350px;
     max-height: 400px;
-    max-width: 60vw;
+    max-width: 70vw;
+    padding: 0;
     margin: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: auto;
 }
 
-.name-row p, h2, img {
+.name-row p, .name-row a, .name-row h2 {
     font-size: 25px;
     font-weight: bold;
+    padding: 10px;
+    margin: 0;
+}
+
+p.name {
+    padding-top: 0px;
+    padding-bottom: 20px;
 }
 
 .name-row img {
-    max-height: 35%;
+    max-height: 30%;
 }
 
 .name-row h4 {
@@ -85,7 +93,7 @@ a {
     background-color: green;
 }
 
-.main div h1, .main div h1 {
+.main div h1 {
     padding: 0;
 }
 
@@ -133,22 +141,20 @@ select {
 }
 
 #stars-select {
-    background: url(https://cdn-icons-png.flaticon.com/512/1828/1828884.png) 3% / 12% no-repeat #EEE;
+    background: url(images/star.png) 3% / 12% no-repeat #EEE;
 }
 
 #vibe-select {
-    background: url(https://cdn-icons-png.flaticon.com/512/2311/2311317.png) 3% / 12% no-repeat #EEE;
+    background: url(images/fire.png) 3% / 12% no-repeat #EEE;
 }
 
 #location-select {
-    background: url(https://cdn-icons.flaticon.com/svg/3916/3916880.svg?token=exp=1675638867~hmac=137cf7f48f758edf5fbb47b452f349a0) 3% / 12% no-repeat #EEE;
+    background: url(images/marker.svg) 3% / 12% no-repeat #EEE;
 }
 
 /* Selected Items */
 .main {
     background: #F98125;
-    /*background: -webkit-linear-gradient(to right, #F09819, #FF512F);
-    background: linear-gradient(to right, #F09819, #FF512F);*/
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -181,24 +187,13 @@ select {
     background: url(https://cdn-icons-png.flaticon.com/512/2386/2386842.png) 3% / 16% no-repeat #EEE;
     cursor: pointer;
     color: black;
-    /*
-    border-radius: 15px;
-    
-    font-size: 1rem;
-    margin: 20px;
-    user-select: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-    */
 }
 
 #clearButton {
     position: fixed;
     bottom: 10px;
-    width: 100%;
-    height: 60px;
     right: 10px;
+    height: 60px;
     text-align: center;
     background-color: white;
     border: 2px solid black;
@@ -295,7 +290,7 @@ body::-webkit-scrollbar-thumb {
 #allNames {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     overflow-y: hidden;
     justify-items: center;
 }
@@ -316,7 +311,6 @@ body::-webkit-scrollbar-thumb {
     margin: auto;
     margin-top: 40px;
 }
-
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -343,22 +337,20 @@ body::-webkit-scrollbar-thumb {
 .stars {
     display: block;
     text-align: center;
-    margin: 10px;
 }
 
 #noNameFound {
     display: none;
     color: red;
+    text-align: center;
 }
 
-/* Popup container */
 .popup {
     position: relative;
     display: inline-block;
     cursor: pointer;
 }
 
-/* The actual popup (appears on top) */
 .popup .popuptext {
     visibility: hidden;
     width: 230px;
@@ -374,7 +366,6 @@ body::-webkit-scrollbar-thumb {
     margin-left: -80px;
 }
 
-/* Popup arrow */
 .popup .popuptext::after {
     content: "";
     position: absolute;
@@ -386,14 +377,11 @@ body::-webkit-scrollbar-thumb {
     border-color: #555 transparent transparent transparent;
 }
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s
 }
-
-/* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
     from {
         opacity: 0;
@@ -414,49 +402,50 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-/* Carousel */
-* {
-    box-sizing: border-box;
-}
-
-.carousel {
-    position: relative;
-    user-select: none;
+/* Overlay */
+#overlay {
+    position: fixed;
+    display: none;
     width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
 }
 
-.carousel div {
-    position: relative;
-    text-align: center;
-    user-select: none;
-}
-
-.carousel div>a {
+#overlayText {
     position: absolute;
-    bottom: 0%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 40px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+#overlayTitle {
+    font-size: 50px;
     color: white;
-    user-select: none;
+    text-align: center;
 }
 
-.carousel img {
-    display: block;
-    height: 200px;
-    user-select: none;
+#overlayTextMain {
+    font-size: 30px;
+    color: white;
+    text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-    .carousel img {
-        height: 400px;
-    }
+#overlayTextUnderDiv {
+    width: fit-content;
+    background-color: black;
+    margin: auto;
 }
 
-/* Info */
-#hats {
-    list-style-type: square;
-    text-align: left;
-    margin-left: 45%;
+#overlayTextUnder {
     font-size: 20px;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }

@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taco Finder</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
+    <link href="info.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="images/tab.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/tab.png">
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+    <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
 </head>
-<body style="overflow: auto; text-align: center;">
+<body style="overflow: auto; text-align: center; overflow-y: hidden;">
+    <div style="width: 100vw; height: 100vh; background: black; text-decoration: none; text-align: center; position: fixed; z-index: 2;"><h1 style="top: 50%; transform: translate(0, -50%); width: 100%; color: white; text-align: center; font-size: 100px;">Not Ready Yet</h1></div>
     <header>
         <nav>
             <ul id="hero">
@@ -23,17 +23,29 @@
             </ul>
         </nav>
     </header>
-    <div class="main2">
-        <div class="box1" style="width: 100%; padding: 0; margin: 0;">
-            <div class="carousel" data-flickity='{ "imagesLoaded": true, "wrapAround": true, "autoPlay": 2000, "pauseAutoPlayOnHover": false, "percentPosition": false, "pageDots": false, "prevNextButtons": false }'> <!--"draggable": false-->
-                <div><img src="images/1.jpg" /></div>
-                <div><img src="images/2.jpg" /></div>
-                <div><img src="images/3.jpg" /></div>
-                <div><img src="images/4.jpg" /></div>
-                <div><img src="imagesc\outatsea.jpg" /></div>
-            </div>
-            <!--TODO: Overlay main title over carousel-->
-            <h1 id="largeTitle">My Search for the perfect taco</h1>
+    <div class="carousel">
+        <div class="static-banner static-banner1"><h1 id="largeTitle" style="font-size: clamp(32px, 4vw, 48px);">My Search for the Perfect Taco</h1></div>
+        <img src="images/1.jpg" alt="Homemade Tacos de Birria" class="carousel-cell" />
+        <img src="images/2.jpg" alt="Tacos from Tenoch" class="carousel-cell" />
+        <img src="images/3.jpg" alt="Chipotle" class="carousel-cell" />
+        <img src="images/4.jpg" alt="Burrito from Tenoch" class="carousel-cell" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" alt="Stock" class="carousel-cell" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" alt="Stock" class="carousel-cell" />
+    </div>
+    <p class="caption">&nbsp;</p>
+        
+        <div class="box2">
+            <h2>If you were sleeping during my presenation, here's some things about me</h2>
+            <ul id="hats">
+                <li>• I love tacos (Obvisously)</li>
+                <li>• Writer</li>
+                <li>• Editor</li>
+                <li>• Photographer</li>
+                <li>• Programmer</li>
+                <li>• Food critic</li>
+                <li>• Interviewer</li>
+                <li>• Presenter</li>
+            </ul>
         </div>
         <div>
             <h1 style="text-align: center;">Heres some things I learned during my journey:</h1>
@@ -64,3 +76,21 @@
 </body>
 
 </html>
+
+    <script>
+        var flkty = new Flickity('.carousel', {
+                imagesLoaded: true,
+                wrapAround: true,
+                autoPlay: 2000,
+                pauseAutoPlayOnHover: false,
+                percentPosition: false,
+                pageDots: true,
+                prevNextButtons: true,
+                draggable: true,
+                cellSelector: ".carousel-cell"
+        });
+        var caption = document.querySelector('.caption');
+        flkty.on('select', function () {
+            caption.textContent = flkty.selectedElement.alt;
+        });
+    </script>
