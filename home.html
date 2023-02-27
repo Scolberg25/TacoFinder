@@ -8,7 +8,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="fetch.js" defer></script>
     <script src="filter.js" defer></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="shortcut icon" href="images/tab.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/tab.png">
 
@@ -48,7 +48,7 @@
         <div class="selectedItems">
             <div class="items">
                 <select name="location" id="location-select">
-                    <option value="">Please choose an location</option>
+                    <option value="clear">Please choose a location</option>
                     <option value="cambridge">Cambridge</option>
                     <option value="somerville">Somerville</option>
                     <option value="watertown">Watertown</option>
@@ -63,7 +63,7 @@
             <!--TODO: Implement vibe-->
             <div class="items">
                 <select name="vibe" id="vibe-select">
-                    <option value="">Please choose a vibe</option>
+                    <option value="clear">Please choose a vibe</option>
                     <option value="mild">Mild</option>
                     <option value="med">Medium🌶️</option>
                     <option value="hot">Hot🌶️🌶️</option>
@@ -74,12 +74,11 @@
 
             <div class="items">
                 <select name="stars" id="stars-select">
-                    <option value="">Please choose a rating</option>
-                    <option value="3">3+ Stars</option>
-                    <option value="3.5">3.5+ Stars</option>
+                    <option value="clear">Please choose a rating</option>
                     <option value="4">4+ Stars</option>
-                    <option value="4.5">4.5+ Stars</option>
-                    <option value="5">5 Stars</option>
+                    <option value="4.2">4.2+ Stars</option>
+                    <option value="4.4">4.4+ Stars</option>
+                    <option value="4.6">4.6+ Stars</option>
                 </select>
             </div>
 
@@ -114,6 +113,13 @@
         <p>BDS 2023 Capstone Project - Made by Sebastian Colberg</p>
     </footer>
 
-    <button type="button" onclick="clear()" id="clearButton">Clear</button>
+    <button type="button" onclick="clearButton()" id="clearButton">Clear</button>
+
+    <script>
+        function clearButton() {
+            const list = document.getElementsByClassName("name-row").classList;
+            list.add("showing");
+        }
+    </script>
 </body>
 </html>

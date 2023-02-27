@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .showing {
+        background-color: coral;
+        padding: 16px;
+    }
+</style>
+
+<body>
+    <button onclick="clearButton()">Add</button>
+    <div id="name-row">
+        <p>I am showing.</p>
+    </div>
+
+    <script>
+        function clearButton() {
+            const list = document.getElementById("name-row").classList;
+            list.add("showing");
+        }
+    </script>
+
+</body>
+
+</html>

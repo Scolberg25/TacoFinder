@@ -27,6 +27,7 @@ fetch("https://api.apispreadsheets.com/data/SrxOBBnogNgBYUFz/").then(res => {
                 let rowIdNode = document.createTextNode(rowInfo["id"])
                 rowId.appendChild(rowIdNode)
                 rowId.classList.add("id")
+                rowId.data = (rowInfo["id"])
 
                 //Name (p)
                 let rowName = document.createElement("p")
@@ -45,7 +46,7 @@ fetch("https://api.apispreadsheets.com/data/SrxOBBnogNgBYUFz/").then(res => {
                 let rowLocationNode = document.createTextNode(rowInfo["location"])
                 rowLocation.appendChild(rowLocationNode)
                 rowLocation.classList.add("location")
-                rowLocation.href = document.createTextNode(rowInfo["locationlink"])
+                rowLocation.href = rowInfo["locationlink"]
 
                 //Stars (p)
 				let rowStars = document.createElement("p")

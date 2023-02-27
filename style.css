@@ -12,6 +12,14 @@
     }
 }
 
+.showing {
+    display: flex !important;
+}
+
+.name-row:not(.showing) {
+    display: none !important;
+}
+
 /* Main */
 html, body {
     height: 100%;

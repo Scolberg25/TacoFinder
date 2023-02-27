@@ -1,3 +1,10 @@
+/*document.getElementById('clearButton').addEventListener('click', function() {
+    let allNamesElm = document.getElementsByClassName("name-row");
+    allNamesElm.classList.add("showing");
+    window.alert("Cleared!");
+    console.log("cleared");
+});*/
+
 //Main
 function prevPage() {
     window.history.back()
