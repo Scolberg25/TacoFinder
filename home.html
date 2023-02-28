@@ -22,6 +22,13 @@
 </head>
 
 <body style="overflow-x: hidden; overflow-y: scroll;" onload="overlayOn()">
+    <div id="clearPopup">
+        <div id="clearChip">
+            <p id="clearPopupText">Cleared!</p>
+        </div>
+    </div>
+
+
     <div id="overlay" onclick="overlayOff()">
         <div id="overlayText">
             <h1 id="overlayTitle">Welcome to Taco Finder</h1>
@@ -114,12 +121,5 @@
     </footer>
 
     <button type="button" onclick="clearButton()" id="clearButton">Clear</button>
-
-    <script>
-        function clearButton() {
-            const list = document.getElementsByClassName("name-row").classList;
-            list.add("showing");
-        }
-    </script>
 </body>
 </html>

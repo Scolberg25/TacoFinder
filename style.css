@@ -390,6 +390,7 @@ body::-webkit-scrollbar-thumb {
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s
 }
+
 @-webkit-keyframes fadeIn {
     from {
         opacity: 0;
@@ -456,4 +457,68 @@ body::-webkit-scrollbar-thumb {
     color: white;
     padding: 10px;
     text-align: center;
+}
+
+#clearPopup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    transform: translate(0px, 5px);
+}
+
+#clearChip {
+    display: flex;
+    height: 50px;
+    padding: 5px 10px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #F98125;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    position: relative;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+.clearChipSelected {
+    animation: clearButtonNotification 5s 1;
+}
+
+@keyframes clearButtonNotification {
+    0% {
+        transform: rotate(0deg);
+        left: 0px;
+    }
+
+    25% {
+        transform: rotate(20deg);
+        left: 0px;
+    }
+
+    50% {
+        transform: rotate(0deg);
+        left: 500px;
+    }
+
+    55% {
+        transform: rotate(0deg);
+        left: 500px;
+    }
+
+    70% {
+        transform: rotate(0deg);
+        left: 500px;
+        background: #1ec7e6;
+    }
+
+    100% {
+        transform: rotate(-360deg);
+        left: 0px;
+    }
 }
