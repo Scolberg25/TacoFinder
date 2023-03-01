@@ -157,12 +157,10 @@ body {
 
 #infoGrid {
     display: grid;
-    grid-template-columns: auto auto;
-    gap: 5px;
-    background-color: none;
-    padding: 20px;
-    min-height: 0;
-    min-width: 0;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-auto-rows: auto;
+    overflow-y: hidden;
 }
 
 .infoGridItems {
@@ -181,4 +179,40 @@ body {
     max-width: 50vw;
     max-height: 50vh;
     display: inline;
+}
+
+.photo-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 240px;
+    overflow-y: hidden;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: #fff;
+    box-shadow: rgb(3 8 20 / 10%) 0px 0.15rem 0.5rem, rgb(2 8 20 / 10%) 0px 0.075rem 0.175rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    transition: all 500ms;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h2 {
+    font-size: 1.7rem;
+    line-height: 1;
+}
+
+.normalText {
+    font-size: 1.4rem;
+    line-height: 2rem;
 }

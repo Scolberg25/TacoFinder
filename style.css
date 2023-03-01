@@ -6,7 +6,7 @@
 }
 
 /* Device Media Queries */
-@media screen and (max-aspect-ratio: 5/4) and (max-width: 450px) {
+@media screen and (max-width: 450px) {
     #dis {
         font-size: 16px;
     }
@@ -463,10 +463,10 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 0;
     z-index: 2;
     position: absolute;
-    transform: translate(0px, 5px);
+    transform: translate(50vw, 5px);
 }
 
 #clearChip {
@@ -503,17 +503,17 @@ body::-webkit-scrollbar-thumb {
 
     50% {
         transform: rotate(0deg);
-        left: 500px;
+        left: 40vw;
     }
 
     55% {
         transform: rotate(0deg);
-        left: 500px;
+        left: 40vw;
     }
 
     70% {
         transform: rotate(0deg);
-        left: 500px;
+        left: 40vw;
         background: #1ec7e6;
     }
 

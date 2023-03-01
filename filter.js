@@ -1,8 +1,3 @@
-let itemSelected = false;
-let starsSelected = false;
-let vibeSelected = false;
-let locationSelected = false;
-
 //Event listeners for dropdown menus
 document.querySelector('#stars-select').addEventListener("change", function() {
     if (this.value == "4") {
@@ -76,6 +71,7 @@ function searchStars(filterByClass, filter) {
         } else {
             row.classList.remove("showing")
     }
+
     loaderElm.style.display = "none"
     allNamesElm.style.display = "grid"
     errorMessageElm.style.display = "none"
@@ -105,6 +101,7 @@ function searchVibe(filterByClass, filter) {
         } else {
             row.classList.remove("showing")
     }
+
     loaderElm.style.display = "none"
     allNamesElm.style.display = "grid"
     errorMessageElm.style.display = "none"
@@ -135,6 +132,7 @@ function searchLocation(filterByClass, filter) {
         } else {
             row.classList.remove("showing")
     }
+
     loaderElm.style.display = "none"
     allNamesElm.style.display = "grid"
     errorMessageElm.style.display = "none"
@@ -149,11 +147,25 @@ function searchLocation(filterByClass, filter) {
     }
 }
 
+//TODO: Fix Spicy
 //I'm feeling spicy (random)
 function searchFunction() {
-    let filter = Math.floor(Math.random() * 28);
     let matchCount = 0;
-    let allNameRows = document.querySelectorAll(".name-row.showing")
+    let allNameRows = document.querySelectorAll(".name-row")
+
+    if (document.querySelectorAll(".name-row.showing").length != "29") {
+        let allNameRows = document.querySelectorAll(".name-row.showing");
+    } else if (document.querySelectorAll(".name-row.showing").length == "29") {
+        for (let i = 0; i < allNameRows.length; i++) {
+        let row = allNameRows[i]
+        row.classList.add("showing")
+    }} else {
+        window.alert("Error")
+    }
+
+    console.log(allNameRows)
+
+    let filter = Math.floor(Math.random() * allNameRows.length);
 
     for (let i = 0; i < allNameRows.length; i++) {
         let row = allNameRows[i]
@@ -164,8 +176,9 @@ function searchFunction() {
             row.style.display = "flex"
             matchCount += 1
         } else {
-            row.style.display = "none"
+            row.classList.remove("showing")
     }
+
     loaderElm.style.display = "none"
     allNamesElm.style.display = "grid"
     errorMessageElm.style.display = "none"
@@ -175,4 +188,23 @@ function searchFunction() {
     if (matchCount === 0) {
         window.alert("Error")
     }
+}
+
+//Clear
+function clearButton() {
+    document.getElementById("location-select").selectedIndex = 0;
+    document.getElementById("vibe-select").selectedIndex = 0;
+    document.getElementById("stars-select").selectedIndex = 0;
+    let allNameRows = document.querySelectorAll(".name-row");
+    //console.log(allNameRows)
+
+    for (let i = 0; i < allNameRows.length; i++) {
+        let row = allNameRows[i]
+        row.classList.add("showing");
+    }
+
+    let chip = document.getElementById('clearChip');
+    chip.style.visibility = "visible";
+    chip.classList.add("clearChipSelected");
+    setTimeout(() => { chip.style.visibility = "hidden"; chip.classList.remove("clearChipSelected"); }, 5200);
 }
