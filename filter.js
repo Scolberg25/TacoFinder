@@ -149,7 +149,6 @@ function searchLocation(filterByClass, filter) {
     }
 }
 
-//TODO: Fix Spicy
 //I'm feeling spicy (random)
 function searchFunction() {
     let matchCount = 0;
@@ -204,6 +203,9 @@ function clearButton() {
         let row = allNameRows[i]
         row.classList.add("showing");
     }
+
+    loaderElm.style.display = "none"
+    errorMessageElm.style.display = "none"
 
     let chip = document.getElementById('clearChip');
     chip.style.visibility = "visible";
