@@ -46,6 +46,8 @@ document.querySelector('#location-select').addEventListener("change", function()
         searchLocation('location', "🚲 Waltham");
     } else if (this.value == "brookline") {
         searchLocation('location', "🚲 Brookline");
+    } else if (this.value == "belmont") {
+        searchLocation('location', "🚲 Belmont")
     } else {
         console.log('No selected');
     }
