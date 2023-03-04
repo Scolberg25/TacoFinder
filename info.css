@@ -1,17 +1,126 @@
+/* Dark modes */
+#darkToggle {
+    float: right;
+    display: block;
+}
+
+#darkToggleLabel {
+    cursor: pointer;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.toggle-slot {
+    position: relative;
+    height: 2em;
+    width: 4em;
+    border: 5px solid #e4e7ec;
+    border-radius: 10em;
+    background-color: white;
+    box-shadow: 0px 2px 5px #e4e7ec;
+    transition: background-color 250ms;
+}
+
+.toggle-checkbox:checked~.toggle-slot {
+    background-color: #374151;
+}
+
+.toggle-button {
+    transform: translate(2.35em, 0.35em);
+    position: absolute;
+    height: 1.3em;
+    width: 1.3em;
+    border-radius: 50%;
+    background-color: #ffeccf;
+    box-shadow: inset 0px 0px 0px 0.15em #ffbb52;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+}
+
+.toggle-checkbox:checked~.toggle-slot .toggle-button {
+    background-color: #485367;
+    box-shadow: inset 0px 0px 0px 0.75em white;
+    transform: translate(0.35em, 0.35em);
+}
+
+.sun-icon {
+    position: absolute;
+    height: 1.2em;
+    width: 1.2em;
+    color: #ffbb52;
+}
+
+.sun-icon-wrapper {
+    position: absolute;
+    height: 1.2em;
+    width: 1.2em;
+    opacity: 1;
+    transform: translate(0.4em, 0.4em) rotate(15deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+}
+
+.toggle-checkbox:checked~.toggle-slot .sun-icon-wrapper {
+    opacity: 0;
+    transform: translate(0.6em, 0.4em) rotate(0deg);
+}
+
+.moon-icon {
+    position: absolute;
+    height: 1.2em;
+    width: 1.2em;
+    color: white;
+}
+
+.moon-icon-wrapper {
+    position: absolute;
+    height: 1.2em;
+    width: 1.2em;
+    opacity: 0;
+    transform: translate(2.2em, 0.4em) rotate(0deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26, 2.5, .46, .71);
+}
+
+.toggle-checkbox:checked~.toggle-slot .moon-icon-wrapper {
+    opacity: 1;
+    transform: translate(2.4em, 0.4em) rotate(-15deg);
+}
+
 :root {
-    --navBarColor: #ffffff;
-    --text: #000000;
-    --background: #ffffff;
-    --border: #000000;
-    --BDSBlue: #385e9d;
-    --BDSYellow: #f2a900;
+    --bg: #f8f8f8;
+    --text: #12181b;
+    --border: #12181b;
+    --box-text: #0c50b1;
+    --main-bg: #F98125;
+}
+
+.darkmode {
+    --bg: #121212;
+    --text: #FFFFFF;
+    --border: #FFFFFF;
+    --box-text: #F98125;
+    --main-bg: #F98125;
 }
 
 /* Device Media Queries */
-@media screen and (max-aspect-ratio: 5/4) and (max-width: 450px) {
+@media screen and (max-width: 450px) {
     #dis {
         font-size: 16px;
     }
+}
+
+.showing {
+    display: flex !important;
+}
+
+.name-row:not(.showing) {
+    display: none !important;
 }
 
 /* Main */
@@ -24,7 +133,12 @@ body {
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    color: #2C599D;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
 }
 
 @keyframes fadeInAnimation {
@@ -35,14 +149,6 @@ body {
     100% {
         opacity: 1;
     }
-}
-
-body {
-    background-color: var(--background);
-    color: var(--text);
-    font-family: Verdana;
-    margin: 0;
-    padding: 0;
 }
 
 body.fadein {
@@ -61,7 +167,9 @@ a {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: var(--navBarColor);
+    background-color: var(--bg);
+    padding: 15px 0 15px 0;
+    border: none;
 }
 
 #hero li {
@@ -74,26 +182,41 @@ a {
     text-align: center;
     padding: 8px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.4em;
 }
 
-#hero {
-    color: white;
-    padding: 15px 0 15px 0;
-    background-color: white;
-    border: none;
+/* Error Pages */
+.fourPage {
+    text-align: center;
 }
 
-#hero>h1 {
-    margin-top: 0;
+/* Text Styling */
+#largeTitle {
+    font-size: clamp(30px, 2.5rem, 50px);
+    text-align: center;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+#bodyText {
+    font-size: 30px;
+    text-align: center;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+#noDot {
+    list-style: none;
+}
+
+.footer {
+    bottom: 0;
+    background: transparent;
+    text-align: center;
 }
 
 * {
     box-sizing: border-box;
-}
-
-body {
-    font-family: sans-serif;
 }
 
 .carousel {

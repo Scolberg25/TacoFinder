@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taco Finder</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js">   </script><script src="https://code.iconify.design/1/1.0.4/iconify.min.js">   </script>
     <script src="fetch.js" defer></script>
     <script src="filter.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="theme.js" defer></script>
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
     <link rel="shortcut icon" href="images/tab.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/tab.png">
 
@@ -44,7 +48,21 @@
             <ul id="hero">
                 <li style="float: left;"><a style="margin: 0;"><img src="images/tab.png" style="height: 30px;" /></a></li>
                 <li style="float: left;"><a id="dis"><b>Taco Finder</b></a></li>
-                <li style="float: right"><a href="info" id="dis"><b>Taco-education</b></a></li>
+                <li style="float: right;"><a href="info" id="dis"><b>Taco-education</b></a></li>
+                <li id="darkToggle">
+                    <label id="darkToggleLabel">
+                        <input class='toggle-checkbox' type='checkbox' name="dark-mode-toggle" id="dark-mode-toggle" area></input>
+                        <div class='toggle-slot'>
+                            <div class='sun-icon-wrapper'>
+                                <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                            </div>
+                            <div class='toggle-button'></div>
+                            <div class='moon-icon-wrapper'>
+                                <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                            </div>
+                        </div>
+                    </label>
+                </li>
             </ul>
         </nav>
     </header>
@@ -68,7 +86,6 @@
                 </select>
             </div>
 
-            <!--TODO: Implement vibe-->
             <div class="items">
                 <select name="vibe" id="vibe-select">
                     <option value="clear">Please choose a vibe</option>

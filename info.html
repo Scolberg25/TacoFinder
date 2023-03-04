@@ -10,6 +10,9 @@
     <link rel="apple-touch-icon" href="images/tab.png">
     <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
     <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+    <script src="theme.js" defer></script>
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
 </head>
 <body style="overflow: auto; text-align: center;">
     <header>
@@ -18,6 +21,21 @@
                 <li style="float: left;"><a style="margin: 0;"><img src="images/tab.png" style="height: 30px;" /></a></li>
                 <li style="float: left;"><a id="dis"><b>Taco Finder</b></a></li>
                 <li style="float: right"><a href="home" id="dis"><b>Back to Taco Finder➜</b></a></li>
+                <li id="darkToggle">
+                    <label id="darkToggleLabel">
+                        <input class='toggle-checkbox' type='checkbox' name="dark-mode-toggle" id="dark-mode-toggle"
+                            area></input>
+                        <div class='toggle-slot'>
+                            <div class='sun-icon-wrapper'>
+                                <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                            </div>
+                            <div class='toggle-button'></div>
+                            <div class='moon-icon-wrapper'>
+                                <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                            </div>
+                        </div>
+                    </label>
+                </li>
             </ul>
         </nav>
     </header>
@@ -98,8 +116,10 @@
         </style>
         <div>
             <h2>I learned a lot of things about tacos and the origin of Mexican Cuisine</h2>
-            <h2 style="font-family: cubano, sans-serif; background-color: #F98125; padding: 1.5rem; color: white; display: block;">Learn More</h2>
-            <a href="origins" style="font-size: 3rem; line-height: 1; display: block; animation: bounce infinite 1s;">👉</a>
+            <a href="origins">
+                <h2 style="font-family: cubano, sans-serif; background-color: #F98125; padding: 1.5rem; color: white; display: block;">Learn More</h2>
+                <span style="font-size: 3rem; line-height: 1; display: block; animation: bounce infinite 1s;">👉</span>
+            </a>
         </div>
         <br>
         <div style="display: none;">
