@@ -215,10 +215,6 @@ a {
     text-align: center;
 }
 
-* {
-    box-sizing: border-box;
-}
-
 .carousel {
     background: #FAFAFA;
     position: relative;
@@ -234,7 +230,7 @@ a {
 }
 
 .caption {
-    background: white;
+    background: var(--bg);
     margin: 0;
     padding: 10px;
     text-align: center;

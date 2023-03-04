@@ -10,9 +10,12 @@
     <link rel="apple-touch-icon" href="images/tab.png">
     <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
     <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+    <script src="theme.js" defer></script>
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
 </head>
 
-<body style="overflow: auto; text-align: center;">
+<body style="overflow: auto;">
     <header>
         <nav>
             <ul id="hero">
@@ -20,13 +23,28 @@
                 </li>
                 <li style="float: left;"><a id="dis"><b>Taco Finder</b></a></li>
                 <li style="float: right"><a href="home" id="dis"><b>Back to Taco Finder➜</b></a></li>
+                <li id="darkToggle">
+                    <label id="darkToggleLabel">
+                        <input class='toggle-checkbox' type='checkbox' name="dark-mode-toggle" id="dark-mode-toggle" area></input>
+                        <div class='toggle-slot'>
+                            <div class='sun-icon-wrapper'>
+                                <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                            </div>
+                            <div class='toggle-button'></div>
+                            <div class='moon-icon-wrapper'>
+                                <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                            </div>
+                        </div>
+                    </label>
+                </li>
             </ul>
         </nav>
     </header>
-
-    <h1>Origins of various "Mexican" ingredients</h1>
-    <h2><span style="color: var(--BDSBlue);">Indigeneous</span> or <span style="color: var(--BDSYellow);">imported</span></h2>
-    <h3>Hover or tap (mobile) over an image to learn more</h3>
+    <div style="text-align: center;">
+        <h1>Origins of various "Mexican" ingredients</h1>
+        <h2><span style="color: var(--BDSBlue);">Indigeneous</span> or <span style="color: var(--BDSYellow);">imported</span></h2>
+        <h3>Hover or tap (mobile) over an image to learn more</h3>
+    </div>
     
     <div class="photo-grid">
         <div class="flip-card card BDSBlue">
