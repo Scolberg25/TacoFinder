@@ -387,3 +387,7 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
     background-color: #F98125;
 }
+
+img {
+    max-width: 90vw;
+}
