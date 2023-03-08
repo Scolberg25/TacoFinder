@@ -376,12 +376,12 @@ h2 {
 }
 
 body::-webkit-scrollbar-track {
-    background-color: #F5F5F5;
+    background-color: var(--bg);
 }
 
 body::-webkit-scrollbar {
     width: 12px;
-    background-color: #F5F5F5;
+    background-color: var(--bg);
 }
 
 body::-webkit-scrollbar-thumb {
