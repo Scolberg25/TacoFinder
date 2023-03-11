@@ -391,3 +391,12 @@ body::-webkit-scrollbar-thumb {
 img {
     max-width: 90vw;
 }
+
+.link {
+    color: var(--BDSBlue);
+    font-weight: bold;
+    text-decoration: underline;
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
