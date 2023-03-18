@@ -1,3 +1,5 @@
 node_modules
 client_secret.json
 imagesc
+# Local Netlify folder
+.netlify
