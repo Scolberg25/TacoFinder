@@ -206,7 +206,7 @@ function clearButton() {
 
     loaderElm.style.display = "none"
     errorMessageElm.style.display = "none"
-    noNameFoundElm.style.display = "none"
+    document.getElementById("noNameFound").style.display = "none"
 
     let chip = document.getElementById('clearChip');
     chip.style.visibility = "visible";
