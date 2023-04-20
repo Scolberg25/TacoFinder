@@ -10,7 +10,7 @@ let loaderElm = document.getElementById("loader");
 let errorMessageElm = document.getElementById("errorMessage");
 
 //Fetch API from API Spreadsheets
-fetch("https://api.apispreadsheets.com/data/SrxOBBnogNgBYUFz/").then(res => {
+fetch("https://tacofinder.netlify.app/data.json").then(res => {
     if (res.status === 200) {
         res.json().then(data => {
             const yourData = data["data"]
